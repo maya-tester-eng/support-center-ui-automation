@@ -10,18 +10,20 @@ public class Driver {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if(driver == null){
+        if (driver == null) {
 
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            String browser = ConfigurationReader.getProperty("browser");
+
+            if (browser.equals("chrome")) {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
 
         }
-
         return driver;
     }
-
     public static void closeDriver(){
 
         if(driver != null){
@@ -33,6 +35,8 @@ public class Driver {
     }
 
 }
-// Now browser type comes from config file. check for it first
+
+
+// Now a browser type comes from a config file. Check for it first.
 
 // This uses Singleton pattern (same driver for all tests).
