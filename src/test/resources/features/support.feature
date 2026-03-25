@@ -32,8 +32,8 @@ Feature: Support Contact Form
     Then name email and message fields should be empty
 
 
-  Scenario: Website link works
+  Scenario: Responsive website link
 
     Given user opens support page
     When user clicks website link
-    Then user should be redirected to company website
+    Then user should be redirected to "SheCodes" website

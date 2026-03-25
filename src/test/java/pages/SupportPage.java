@@ -24,6 +24,13 @@ public class SupportPage {
 
     @FindBy(id="submit")
     public WebElement submitButton;
+
+    @FindBy(id="error-message")        // or @FindBy(className = "error")
+                                        // or @FindBy(xpath = "//div[contains(text(),'error')]")
+    public WebElement errorMessage;
+
+    @FindBy(linkText = "our website")
+    public WebElement websiteLink;
 }
 
 

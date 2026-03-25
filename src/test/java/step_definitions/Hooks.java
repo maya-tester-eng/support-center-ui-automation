@@ -12,7 +12,7 @@ import utilities.Driver;
         public void setUp() {
 
             Driver.getDriver().manage().window().maximize();
-
+            
         }
 
         @After
